@@ -1,0 +1,737 @@
+/* Reset and base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #181C22;
+    color: #E5E6EB;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+    background: #0f1218;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 12px rgba(86, 116, 221, 0.7);
+    backdrop-filter: saturate(180%) blur(15px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;  /* Center nav-links horizontally */
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #D7D9DC;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 3px;
+    background: #F79E1B;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+    color: #F79E1B;
+    box-shadow: 0 0 8px #F79E1B;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a:focus::after {
+    width: 100%;
+}
+
+/* Responsive Navbar */
+@media (max-width: 700px) {
+    .nav-container {
+        padding: 0.8rem 1rem;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+    .nav-links li a {
+        font-size: 1rem;
+    }
+}
+
+/* Common section container */
+section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    background: #21242a;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
+    padding: 2rem 2.5rem;
+    color: #D7D9DC;
+}
+
+/* Headings */
+h1, h2 {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #D7D9DC;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    border-left: 5px solid #5674DD;
+    padding-left: 0.7rem;
+    color: #D7D9DC;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.1rem;
+}
+
+/* Responsive typography */
+@media (max-width: 700px) {
+    section {
+        padding: 1.1rem 0.7rem;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+    h2 {
+        font-size: 1.15rem;
+        padding-left: 0.4rem;
+        border-width: 3px;
+    }
+}
+
+/* Hero Section */
+.dark-hero {
+    background: #16181D;
+    padding: 4rem 0 0 0;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-effect {
+    background: #23262F;
+    border-radius: 22px;
+    box-shadow: 0 8px 40px #10102255;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 3.5rem 3rem;
+    gap: 2.5rem;
+}
+
+.hero-intro {
+    width: 100%;
+}
+
+.hero-intro-faded {
+    color: #7485A3;
+    font-size: 1.7rem;
+    font-weight: 700;
+    opacity: 0.7;
+    margin-right: 0.5rem;
+    user-select: none;
+}
+
+.hero-name {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.hero-title {
+    margin: 1rem 0 1.7rem 0;
+    font-size: 2.7rem;
+    font-weight: 850;
+    letter-spacing: 1px;
+    color: #F9F9FA;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.18rem;
+    color: #BBC1D1;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+}
+
+.cta-btn,
+.resume-btn {
+    padding: 0.85rem 2.2rem;
+    border-radius: 28px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 3px 16px #11121655;
+    background: #111216;
+    color: #F7F7F7;
+    border: 2px solid #30344a;
+    transition: background 0.24s, box-shadow 0.24s, color 0.24s, transform 0.19s;
+}
+
+.cta-btn:hover,
+.resume-btn:hover {
+    background: #F79E1B;
+    color: #23262F;
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* Responsive hero */
+@media (max-width: 950px) {
+    .card-effect {
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Skills Section */
+.skills-section {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #D7D9DC;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.2rem;
+}
+
+.skill-card {
+    background: #f7f7f7;
+    width: 140px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 11px 33px rgba(86, 116, 221, 0.5);
+}
+
+.skill-card img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.skill-card span {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+/* Projects Section */
+.project-card {
+    background: #2C2F39;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(87, 116, 221, 0.6);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #89A9FF;
+}
+
+.project-card p strong {
+    color: #F79E1B;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.project-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.3rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.github-link {
+    background-color: #5674DD;
+    color: white;
+}
+
+.github-link:hover {
+    background-color: #4058A1;
+}
+
+.live-btn {
+    background-color: #F79E1B;
+    color: #20212E;
+}
+
+.live-btn:hover {
+    background-color: #d38f18;
+    color: white;
+}
+
+/* Education, Work Experience, Contact, Achievements common section styles */
+#education,
+#contact,
+#work-experience,
+#achievements {
+    max-width: 1000px;
+    margin: 3rem auto;
+    background: #21242a;
+    border-radius: 14px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
+}
+
+.education-item,
+.work-item {
+    background: #2C2F39;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.education-item h3,
+.work-item h3 {
+    margin-top: 0;
+    color: #89A9FF;
+}
+
+#contact ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#contact ul li {
+    margin-bottom: 0.6rem;
+}
+
+#contact a {
+    color: #89A9FF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#contact a:hover {
+    color: #F79E1B;
+}
+
+/* Achievements Section */
+#achievements {
+    color: #D7D9DC;
+}
+
+#achievements h2 {
+    border-left: 5px solid #5674DD;
+    padding-left: 0.7rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.certificate-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    justify-content: space-around;
+}
+
+.certificate-card {
+    background: #2C2F39;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 250px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(86, 116, 221, 0.7);
+}
+
+.certificate-image {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+    margin-bottom: 1.2rem;
+    border-radius: 8px;
+}
+
+.certificate-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: #89A9FF;
+    font-size: 1.2rem;
+}
+
+.certificate-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #F79E1B;
+}
+
+/* Responsive certificate list */
+@media (max-width: 700px) {
+    .certificate-list {
+        justify-content: center;
+    }
+    .certificate-card {
+        width: 90%;
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 600px;
+    margin: 3rem auto;
+    background: #23262F;
+    color: #D7D9DC;
+    padding: 2rem 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.contact-links {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.contact-icon:hover {
+    filter: brightness(1.3);
+}
+
+/* WhatsApp form */
+.whatsapp-form label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.whatsapp-form textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 0.85rem;
+    resize: vertical;
+    font-size: 1rem;
+    font-family: inherit;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.btn.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 0.7rem 1.8rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.whatsapp-btn:hover {
+    background-color: #1ebe57;
+}
+
+/* Work Experience */
+.work-item.with-image {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background: #23262F;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.work-image-container {
+    flex-shrink: 0;
+}
+
+.work-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(86, 116, 221, 0.12);
+}
+
+.work-details {
+    flex: 1;
+}
+
+.work-details h3 {
+    color: #89A9FF;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.work-details p {
+    color: #F4F5F7;
+    margin: 0;
+}
+/* Base styles remain the same from previous CSS */
+
+/* Responsive Navbar */
+@media (max-width: 700px) {
+    .nav-container {
+        padding: 0.8rem 1rem;
+        justify-content: flex-start;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+    .nav-links li a {
+        font-size: 1rem;
+    }
+}
+
+/* Hero Section Responsive */
+@media (max-width: 950px) {
+    .card-effect {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        max-width: 90%;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .hero-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .cta-btn,
+    .resume-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.9rem 1rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Skills Section Responsive */
+@media (max-width: 700px) {
+    .skills-container {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .skill-card {
+        width: 120px;
+        padding: 1rem;
+    }
+    .skill-card img {
+        width: 48px;
+        height: 48px;
+    }
+    .skill-card span {
+        font-size: 1rem;
+    }
+}
+
+/* Projects Section Responsive */
+@media (max-width: 900px) {
+    .project-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .project-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    .project-links {
+        justify-content: center;
+    }
+}
+
+/* Education, Work Experience, Achievements Responsive */
+@media (max-width: 700px) {
+    section {
+        padding: 1.2rem 1rem;
+        margin: 2rem auto;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+        padding-left: 0.5rem;
+        border-width: 4px;
+    }
+}
+
+/* Achievements Section */
+@media (max-width: 700px) {
+    .certificate-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .certificate-card {
+        width: 90%;
+    }
+}
+
+/* Contact Section Responsive */
+@media (max-width: 700px) {
+    .contact-section {
+        max-width: 90%;
+        padding: 2rem 1rem;
+    }
+    .contact-links {
+        justify-content: center;
+        gap: 1.2rem;
+    }
+    .contact-icon {
+        width: 32px;
+        height: 32px;
+    }
+    .whatsapp-form textarea {
+        font-size: 0.95rem;
+    }
+    .btn.whatsapp-btn {
+        padding: 0.7rem 1.6rem;
+        font-size: 1rem;
+    }
+}
+
+/* Work Experience Responsive */
+@media (max-width: 600px) {
+    .work-item.with-image {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .work-image-container {
+        margin-bottom: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .work-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 12px;
+    }
+    .work-details {
+        width: 100%;
+    }
+}
+
+/* Button full width for very small devices */
+@media (max-width: 400px) {
+    .hero-actions,
+    .project-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .cta-btn,
+    .resume-btn,
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
