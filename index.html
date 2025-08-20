@@ -11,6 +11,11 @@
     <!-- Navbar -->
     <nav>
         <div class="nav-container">
+                   <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -253,6 +258,17 @@
             <button type="submit" class="btn whatsapp-btn">Send via WhatsApp</button>
         </form>
     </section>
+    <script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+    navToggle.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('active');
+  });
+</script>
+
 
 </body>
 </html>
