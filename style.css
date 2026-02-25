@@ -777,14 +777,14 @@ p {
     padding: 0;
 }
 
-/* Mobile styles */
+/* Mobile styles 
 @media (max-width: 1200px) {
     .nav-toggle {
         display: flex;
     }
     .nav-links {
         position: absolute;
-        top: 60px; /* adjust based on your nav height */
+        top: 60px; 
         right: 0;
         background: #0f1218;
         width: 100%;
@@ -814,4 +814,94 @@ p {
     .nav-links li:last-child a {
         border-bottom: none;
     }
+} */
+/* ===== FIXED MOBILE NAVBAR ===== */
+@media (max-width: 768px) {
+
+    .nav-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;              /* height of navbar */
+        right: 10px;
+        width: 220px;           /* small width */
+        background: #0f1218;
+        border-radius: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        max-height: 0;
+        overflow-y: auto;       /* makes it scrollable */
+        overflow-x: hidden;
+
+        transition: max-height 0.3s ease;
+        border: 1px solid #2c3240;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        padding: 0;
+
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        max-height: 300px;      /* small dropdown */
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 10px 15px;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+
+    .nav-links li a:hover {
+        background: #1a1f2b;
+    }
 }
+/* Research Section */
+#research {
+    max-width: 1000px;
+    margin: 3rem auto;
+    background: #21242a;
+    border-radius: 14px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
+}
+
+.research-card {
+    background: #2C2F39;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(86, 116, 221, 0.6);
+}
+
+.research-card h3 {
+    margin-top: 0;
+    color: #89A9FF;
+}
+
+.research-meta {
+    font-size: 0.95rem;
+    color: #F79E1B;
+    margin-bottom: 0.8rem;
+}
+
+.research-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+} 
