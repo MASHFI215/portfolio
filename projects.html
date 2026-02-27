@@ -9,15 +9,27 @@
 <body>
     <!-- Navbar -->
     <header>
-        <nav>
-            <div class="logo">Mashfi Portfolio</div>
+       <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+                   <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#work-experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
+
     </header>
 
     <!-- Projects Section -->
@@ -177,5 +189,13 @@
     <footer>
         &copy; 2026 Obayed Mashfi. All rights reserved.
     </footer>
+    <script>
+const toggleBtn = document.getElementById("nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
 </body>
 </html>

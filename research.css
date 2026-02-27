@@ -1,0 +1,215 @@
+/* ===============================
+   RESEARCH PAGE STYLING
+   =============================== */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* choose ONE font */
+}
+
+body {
+  background-color: #0f172a;  /* keep landing theme */
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* ===============================
+   Research Grid
+   =============================== */
+
+.research-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    padding: 60px 10%;
+}
+
+/* ===============================
+   Research Card
+   =============================== */
+
+.research-card {
+    background: linear-gradient(145deg, #111827, #0f172a);
+    border: 1px solid #1f2937;
+    padding: 30px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.research-card:hover {
+    transform: translateY(-10px);
+    border-color: #38bdf8;
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+}
+
+/* Title */
+.research-card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* Description */
+.research-card p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Tools Section */
+.research-card .tools {
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+/* DOI */
+.research-card .doi {
+    font-size: 13px;
+    color: #38bdf8;
+    word-break: break-all;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.research-card .btn {
+    align-self: flex-start;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.research-card .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+}
+/* Footer */
+footer {
+  background-color: #1e293b;
+  color: #94a3b8;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 50px;
+  border-top: 1px solid #334155;
+}
+/* ===============================
+/* ===============================
+   NAVBAR (Desktop + Mobile Fixed)
+   =============================== */
+
+nav {
+    background: #0f1218;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 12px rgba(86, 116, 221, 0.7);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ================= DESKTOP MENU ================= */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: #D7D9DC;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.4rem 0.6rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #F79E1B;
+}
+
+/* ================= HAMBURGER BUTTON ================= */
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background: #89A9FF;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+/* ================= MOBILE MENU ================= */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        padding: 1rem;
+    }
+
+    /* Show hamburger */
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Hide menu by default */
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 220px;
+        background: #0f1218;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 1rem;
+
+        display: none;  /* 🔥 important */
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    /* Show when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        width: 100%;
+        display: block;
+        font-size: 1rem;
+    }
+}
